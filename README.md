@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Summary
+This is a simple Weather App built using React. The app displays the current temperature, humidity, and weather description for a selected city using data retrieved from the OpenWeatherMap API.
 
-## Available Scripts
+## Components
+The app has two components: 'App' and 'BoxCity'.
 
-In the project directory, you can run:
+### 'App'
+The 'App' component is the main component of the app. It holds the state of the currently selected city and the weather data retrieved from the API. It also contains the logic to fetch the weather data when a new city is selected.
 
-### `npm start`
+#### Props
+None
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### State
+cities: An array of objects representing the available cities. Each object has a name and id property.
+selectedCity: A string representing the currently selected city.
+weatherData: An object representing the weather data for the selected city. The object has properties for temperature, humidity, and weather description.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Methods
+handleSelectCity: A method that sets the selectedCity state to the selected city.
 
-### `npm test`
+#### LifeCycle Methods
+useEffect: This method is used to fetch the weather data for the selected city when the selectedCity state changes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### BoxCity
+The BoxCity component is a child component of App that displays a box for a specific city. When the box is clicked, it sets the selectedCity state to the name of the city
 
-### `npm run build`
+#### Props
+cityName: A string representing the name of the city.
+isSelected: A boolean value indicating whether or not the box is selected.
+onSelectCity: A function that is called when the box is clicked.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### State
+None
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Methods
+None
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Dependencies
+React: A JavaScript library for building user interfaces.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## API
+The app uses the OpenWeatherMap API to retrieve weather data for the selected city. The API requires an API key, which is stored as a constant in the 'App' component.
