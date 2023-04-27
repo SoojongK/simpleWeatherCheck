@@ -36,7 +36,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://soojongk.github.io/weather-app/",
+  "homepage": "https://soojongk.github.io/simpleWeatherCheck/",
   "devDependencies": {
     "gh-pages": "^5.0.0"
   }
